@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Pachet Creat";
+}
+
+<h2>Pachet Creat cu Succes!</h2>
+<p>Detaliile pachetului au fost salvate.</p>
+
+<h3>Costul Livrării: @ViewBag.CostLivrare</h3>
+
+<a asp-controller="Pachet" asp-action="Create" class="btn btn-primary">Creează un Nou Pachet</a>
+<form asp-controller="Pachet" asp-action="Accept" method="post">
+    <input type="hidden" name="cost" value="@ViewBag.CostLivrare" />
+    <button type="submit" class="btn btn-success">Acceptă Expediția</button>
+</form>

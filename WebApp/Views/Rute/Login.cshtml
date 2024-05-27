@@ -1,0 +1,33 @@
+@model SediuViewModel
+
+@{
+ViewData["Title"] = "Rute";
+}
+
+<h2>Introdu Sediu</h2>
+<p>
+    Introdu un sediu și un orar valid pentru a putea să creezi o comandă
+</p>
+
+@using (Html.BeginForm())
+{
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<div class="form-group">
+    <label for="Oras">Oraș:</label>
+    @Html.TextBoxFor(m => m.Oras, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Oras, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    <label for="Orar">Orar:</label>
+    @Html.TextBoxFor(m => m.Orar, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Orar, "", new { @class = "text-danger" })
+</div>
+
+<button type="submit" class="btn btn-primary">Expediere colet</button>
+<a href="@Url.Action("ViewSedii", "Sedii")" class="btn btn-secondary">Vizualizare Sediilor</a>
+<a href="@Url.Action("Register", "Rute")" class="btn btn-secondary">Adauga Sediu</a>
+<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Pagina Home</a>
+
+}

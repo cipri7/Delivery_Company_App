@@ -1,0 +1,47 @@
+@model AdaugaRutaViewModel
+
+@{
+ViewData["Title"] = "Inregi";
+}
+<title>@ViewData["Title"]</title>
+
+<h2>Inregistreaza Sediu</h2>
+<p>Adauga sediu pentru a putea expedia un colet</p>
+
+@using (Html.BeginForm("Register", "Rute", FormMethod.Post, new { id = "registerForm" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label for="Oras">Oras:</label>
+        @Html.TextBoxFor(m => m.Oras, new { @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(m => m.Oras)
+    </div>
+
+    <div class="form-group">
+        <label for="Orar">Orar:</label>
+        @Html.TextBoxFor(m => m.Orar, new { @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(m => m.Orar)
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("registerForm");
+            const submitButton = document.getElementById("submitButton");
+            const password = document.getElementById("Password");
+
+            form.addEventListener("input", function () {
+                if (form.checkValidity()) {
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.disabled = true;
+                }
+            });
+        });
+    </script>
+    
+    <button type="submit" id="submitButton" class="btn btn-primary" disabled>Register</button>
+
+    <!-- Button to navigate back to login -->
+    <a href="@Url.Action("Login", "Rute")" class="btn btn-secondary">Back to Route</a>
+}

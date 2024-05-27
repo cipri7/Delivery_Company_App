@@ -1,0 +1,44 @@
+@model List<WebApp.Pachet>
+
+@{
+    ViewData["Title"] = "All Packages";
+}
+
+<h1>All Packages</h1>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nume Expeditor</th>
+            <th>Telefon Expeditor</th>
+            <th>Oras Plecare</th>
+            <th>Oras Destinatie</th>
+            <th>Nume Destinatar</th>
+            <th>Telefon Destinatar</th>
+            <th>Greutate</th>
+            <th>Categorie Speciala</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var pachet in Model)
+        {
+            <tr>
+                <td>@pachet.NumeExpeditor</td>
+                <td>@pachet.TelefonExpeditor</td>
+                <td>@pachet.OrasPlecare</td>
+                <td>@pachet.OrasDestinatie</td>
+                <td>@pachet.NumeDestinatar</td>
+                <td>@pachet.TelefonDestinatar</td>
+                <td>@pachet.Greutate</td>
+                <td>@pachet.CategorieSpeciala</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No packages found.</p>
+}

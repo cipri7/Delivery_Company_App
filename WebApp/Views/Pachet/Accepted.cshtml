@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Expediția a fost Acceptată";
+}
+
+<h2>Expediția a fost Acceptată</h2>
+<p>Costul acceptat: @ViewBag.AcceptedCost</p>
+<p>Livrarea va fi expediata in cel mai scurt timp!</p>
+
+<a asp-controller="Pachet" asp-action="Create" class="btn btn-primary">Creează un Nou Pachet</a>

@@ -1,0 +1,22 @@
+@model List<Tuple<string, string>>
+
+@{
+    ViewData["Title"] = "Watchlist";
+}
+
+<h1>Sedii</h1>
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+        @foreach (var sediu in Model)
+        {
+            <li>Oraș: @sediu.Item1, Orar: @sediu.Item2</li>
+        }
+    </ul>
+}
+else
+{
+    <p>You have no stocks in your watchlist.</p>
+}
+<a href="@Url.Action("Login", "Rute")" class="btn btn-secondary">Inapoi la rute</a>

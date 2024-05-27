@@ -1,0 +1,117 @@
+﻿@{
+Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrziSoft Logistics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #343a40; /* Culorile footer-ului preluate din stilurile Cargus.com */
+            color: #fff;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .main-content {
+            min-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .divider {
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">UrziSoft Logistics</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Acasă <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("ViewSedii", "Sedii")">Sedii <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Register", "Rute")">Rute</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("ViewAll", "Pachet")">Colete</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="main-content">
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Bine ați venit la UrziSoft Logistics</h1>
+            <p class="lead">Partenerul dumneavoastră de încredere pentru servicii de curierat rapid și eficient.</p>
+            <hr class="my-4">
+            <p>Experiență, siguranță și livrare promptă.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Aflați mai multe</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="center-text">Funcționalități</h2>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Adăugare rute</h3>
+                <p>Planifică transportul adăugând și gestionând rutele într-un mod flexibil.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Vizualizare sedii</h3>
+                <p>Accesează informații detaliate despre sediile companiei, inclusiv locația și informațiile de contact.</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Creare colet</h3>
+                <p>Creează rapid și ușor colete, atribuindu-le informații precum greutatea și adresa de livrare.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Vizualizare colete</h3>
+                <p>Accesează informații detaliate despre coletele create și statusul lor.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="text-center">
+    <p>&copy; 2024 UrziSoft Logistics. Toate drepturile rezervate.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

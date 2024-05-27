@@ -1,0 +1,127 @@
+﻿@* @model WebApp.Pachet *@
+@* *@
+@* @{ *@
+@*     ViewData["Title"] = "Creează un Pachet"; *@
+@* } *@
+@* *@
+@* <h2>Creează un Pachet</h2> *@
+@* *@
+@* <form asp-action="Create" method="post"> *@
+@*     <div class="form-group"> *@
+@*         <label asp-for="NumeExpeditor" class="control-label"></label> *@
+@*         <input asp-for="NumeExpeditor" class="form-control" /> *@
+@*         <span asp-validation-for="NumeExpeditor" class="text-danger"></span> *@
+@*     </div> *@
+@*     <div class="form-group"> *@
+@*         <label asp-for="TelefonExpeditor" class="control-label"></label> *@
+@*         <input asp-for="TelefonExpeditor" class="form-control" /> *@
+@*         <span asp-validation-for="TelefonExpeditor" class="text-danger"></span> *@
+@*     </div> *@
+@*     <div class="form-group"> *@
+@*         <label asp-for="OrasPlecare" class="control-label"></label> *@
+@*         <input asp-for="OrasPlecare" class="form-control" /> *@
+@*         <span asp-validation-for="OrasPlecare" class="text-danger"></span> *@
+@*     </div> *@
+@*     <div class="form-group"> *@
+@*         <label asp-for="OrasDestinatie" class="control-label"></label> *@
+@*         <input asp-for="OrasDestinatie" class="form-control" /> *@
+@*         <span asp-validation-for="OrasDestinatie" class="text-danger"></span> *@
+@*     </div> *@
+@*     <div class="form-group"> *@
+@*         <label asp-for="NumeDestinatar" class="control-label"></label> *@
+@*         <input asp-for="NumeDestinatar" class="form-control" /> *@
+@*         <span asp-validation-for="NumeDestinatar" class="text-danger"></span> *@
+@*     </div> *@
+@*     <div class="form-group"> *@
+@*         <label asp-for="TelefonDestinatar" class="control-label"></label> *@
+@*         <input asp-for="TelefonDestinatar" class="form-control" /> *@
+@*         <span asp-validation-for="TelefonDestinatar" class="text-danger"></span> *@
+@*     </div> *@
+@*     <div class="form-group"> *@
+@*         <label asp-for="Greutate" class="control-label"></label> *@
+@*         <input asp-for="Greutate" class="form-control" /> *@
+@*         <span asp-validation-for="Greutate" class="text-danger"></span> *@
+@*     </div> *@
+@*     <div class="form-group"> *@
+@*         <label asp-for="CategorieSpeciala" class="control-label"></label> *@
+@*         <select asp-for="CategorieSpeciala" class="form-control"> *@
+@*             <option value="None">None</option> *@
+@*             <option value="Fragil">Fragil</option> *@
+@*             <option value="Pretios">Prețios</option> *@
+@*             <option value="Periculos">Periculos</option> *@
+@*         </select> *@
+@*         <span asp-validation-for="CategorieSpeciala" class="text-danger"></span> *@
+@*     </div> *@
+@*     <button type="submit" class="btn btn-primary">Creează Pachet</button> *@
+@* </form> *@
+@* *@
+@* @if (ViewBag.CostLivrare != null) *@
+@* { *@
+@*     <h3>Costul Livrării: @ViewBag.CostLivrare</h3> *@
+@* } *@
+@* *@
+@* @section Scripts { *@
+@*     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} *@
+@* } *@
+
+@model WebApp.Pachet
+
+@{
+    ViewData["Title"] = "Creează un Pachet";
+}
+
+<h2>Creează un Pachet</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="NumeExpeditor" class="control-label"></label>
+        <input asp-for="NumeExpeditor" class="form-control" />
+        <span asp-validation-for="NumeExpeditor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TelefonExpeditor" class="control-label"></label>
+        <input asp-for="TelefonExpeditor" class="form-control" />
+        <span asp-validation-for="TelefonExpeditor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OrasPlecare" class="control-label"></label>
+        <input asp-for="OrasPlecare" class="form-control" />
+        <span asp-validation-for="OrasPlecare" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OrasDestinatie" class="control-label"></label>
+        <input asp-for="OrasDestinatie" class="form-control" />
+        <span asp-validation-for="OrasDestinatie" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumeDestinatar" class="control-label"></label>
+        <input asp-for="NumeDestinatar" class="form-control" />
+        <span asp-validation-for="NumeDestinatar" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TelefonDestinatar" class="control-label"></label>
+        <input asp-for="TelefonDestinatar" class="form-control" />
+        <span asp-validation-for="TelefonDestinatar" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Greutate" class="control-label"></label>
+        <input asp-for="Greutate" class="form-control" />
+        <span asp-validation-for="Greutate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategorieSpeciala" class="control-label"></label>
+        <select asp-for="CategorieSpeciala" class="form-control">
+            <option value="None">None</option>
+            <option value="Fragil">Fragil</option>
+            <option value="Pretios">Pretios</option>
+            <option value="Periculos">Periculos</option>
+        </select>
+        <span asp-validation-for="CategorieSpeciala" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Creează Pachet</button>
+    <a href="@Url.Action("ViewAll", "Pachet")" class="btn btn-secondary">Vizualizare Pachete</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
